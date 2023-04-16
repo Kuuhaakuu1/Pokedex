@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -64,13 +65,16 @@ private static final String TAG = MainActivity.class.getSimpleName();
             attackView.setText("Attack : " + String.valueOf(pokemon.getAttack()));
             Picasso.get().load(pokemon.getSpriteLink()).into(spriteView);
 
-            View panel = LayoutInflater.from(this).inflate(R.layout.pokemon_panel, parent, false);
+            View panel = LayoutInflater.from(this).inflate(R.layout.pokemon_panel, null);
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams.setMargins(50, 50, 50, 50); // Set margin bottom to add spacing between panels
+            panel.setLayoutParams(layoutParams);
             parent = findViewById(R.id.parent_layout); // The parent layout to add the panel to
             parent.addView(panel);
         }
-
-
-
     }
 
 }
