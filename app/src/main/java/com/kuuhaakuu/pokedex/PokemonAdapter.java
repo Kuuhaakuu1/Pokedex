@@ -23,7 +23,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
     @NonNull
     @Override
     public PokemonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon_item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon_panel, parent, false);
         return new PokemonViewHolder(view);
     }
 
@@ -52,11 +52,11 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
 
         public PokemonViewHolder(@NonNull View itemView) {
             super(itemView);
-            spriteImageView = itemView.findViewById(R.id.sprite_image_view);
-            nameTextView = itemView.findViewById(R.id.name_text_view);
-            hpTextView = itemView.findViewById(R.id.hp_text_view);
-            defenseTextView = itemView.findViewById(R.id.defense_text_view);
-            attackTextView = itemView.findViewById(R.id.attack_text_view);
+            spriteImageView = itemView.findViewById(R.id.pokemon_sprite);
+            nameTextView = itemView.findViewById(R.id.pokemon_name);
+            hpTextView = itemView.findViewById(R.id.pokemon_hp);
+            defenseTextView = itemView.findViewById(R.id.pokemon_defense);
+            attackTextView = itemView.findViewById(R.id.pokemon_attack);
         }
     }
 

@@ -42,6 +42,7 @@ public class PokemonAPI {
 
         @Override
         protected String doInBackground(Void... voids) {
+        Log.d(TAG,"Hy ?");
             try {
                 URL url = new URL(POKEMON_LIST_URL);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -89,6 +90,7 @@ public class PokemonAPI {
                     Log.e(TAG, "Error parsing Pokemon list response", e);
                 }
             }
+
         }
     }
 
@@ -134,9 +136,9 @@ public class PokemonAPI {
 
         @Override
         protected void onPostExecute(Pokemon result) {
-            if (pokemonDataList != null) {
-                callback.onPokemonListFetched(pokemonDataList);
-            }
+                if (pokemonDataList != null) {
+                    callback.onPokemonListFetched(pokemonDataList);
+                }
         }
     }
 }
