@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class PokemonAPI {
 
     private static final String TAG = PokemonAPI.class.getSimpleName();
-    private static final String POKEMON_LIST_URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=100";
+    private static final String POKEMON_LIST_URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10";
     private static final String POKEMON_URL_TEMPLATE = "https://pokeapi.co/api/v2/pokemon/%s/";
 
     private ArrayList<String> pokemonList;
